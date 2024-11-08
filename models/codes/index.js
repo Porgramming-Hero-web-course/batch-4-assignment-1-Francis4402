@@ -15,13 +15,32 @@ function countWordOccurrences(sentence, word) {
     const matches = sentence.match(regex);
     return matches ? matches.length : 0;
 }
-const sentence = "TypeScript is great. I love TypeScript!";
-const word = "typescript";
+const sentence = "TypeScript is great. I love typeScript!";
+const word = "Typescript";
 const count = countWordOccurrences(sentence, word);
 console.log(count);
 console.log();
-function calculateShapeArea(arg0) {
-    return arg0.shape = "circle", arg0.radius = 5;
+function calculateShapeArea(shape) {
+    if (shape.shape === "circle") {
+        return Math.PI * shape.radius ** 2;
+    }
+    else {
+        return shape.width * shape.height;
+    }
 }
-calculateShapeArea({ shape: "circle", radius: 5 });
-console.log(calculateShapeArea);
+const circleArea = calculateShapeArea({ shape: "circle", radius: 5 });
+console.log(circleArea);
+console.log();
+const rectangleArea = calculateShapeArea({ shape: "rectangle", width: 6, height: 4 });
+console.log(rectangleArea);
+console.log();
+const person = [
+    {
+        name: "Alice",
+        age: 30,
+    }
+];
+function getProperty(obj, key) {
+    return obj[key];
+}
+console.log(getProperty(person[0], "name"));
